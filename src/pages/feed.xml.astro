@@ -1,0 +1,79 @@
+---
+import { getCollection } from "astro:content";
+
+async function getSize(audioUrl) {
+  const req = await fetch(audioUrl, {
+    method: "HEAD",
+  });
+
+  return req.headers.get("Content-Length");
+}
+
+  const episodes = await getCollection("episodes");
+  const items = [];
+  for (let i = 0; i < episodes.length; i++) {
+    const epi = episodes[i];
+    items.push({
+      title: epi.data.title,
+      pubDate: epi.data.date,
+      description: epi.data.blurb,
+      link: `/episodes/${epi.slug}/`,
+      audioUrl: epi.data.audioUrl,
+      season: epi.data.season,
+      episode: epi.data.episode
+    });
+  }
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+  <channel>
+    <atom:link href="http://linktoyourpodcast.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <title>Title of Your Podcast</title>
+    <description>This is where you will put the full description of your podcast--who creates this podcast and what it's about.</description>
+    <copyright>Copyright 2019 Your Name</copyright>
+    <language>en</language>
+    <pubDate>Fri, 6 Dec 2019 23:35:48 PST</pubDate>
+    <lastBuildDate>Fri, 6 Dec 2019 23:35:48 PST</lastBuildDate>
+    <image>
+      <link>http://linktoyourpodcast.com</link>
+      <title>Title of Your Podcast</title>
+      <url>http://linktoyourpodcast.com/artwork.jpg</url>
+    </image>
+    <link>http://linktoyourpodcast.com</link>
+    <itunes:type>episodic</itunes:type>
+    <itunes:summary>This is where you will put the full description of your podcast--who creates this podcast and what it's about.</itunes:summary>
+    <itunes:author>Your Name</itunes:author>
+    <itunes:explicit>no</itunes:explicit>
+    <itunes:image href="http://linktoyourpodcast.com/artwork.jpg"/>
+    <itunes:keywords>keywords, seperated by, commas and, spaces</itunes:keywords>
+    <itunes:owner>
+      <itunes:name>Your Name</itunes:name>
+      <itunes:email>email@address.com</itunes:email>
+    </itunes:owner>
+    <itunes:category text="Comedy"/>
+    <itunes:category text="Personal Journals"/>
+
+    <item>
+      <guid isPermaLink="true">http://linktoyourpodcast.com/episode-1.mp3</guid>
+      <title>Title of Episode One</title>
+      <link>http://linktoyourpodcast.com/episode-1</link>
+      <description>This is where you will put the description of this episode. It is important to remember that this should only be plain, unformatted text.</description>
+      <pubDate>Sun, 1 Sep 2019 03:40:02 PST</pubDate>
+      <author>Your Name</author>
+      <content:encoded><![CDATA[<p>This is where you will put the description of this episode. Unlike the text in the <code>"description"<code> tage above, this can be <i>formatted<i> with HTML.</p>]]></content:encoded>
+      <enclosure length="37424476" type="audio/mpeg" url="http://linktoyourpodcast.com/episode-1.mp3"/>
+      <itunes:title>Title of Episode One</itunes:title>
+      <itunes:author>Your Name</itunes:author>
+      <itunes:image href="http://linktoyourpodcast.com/artwork.jpg"/>
+      <itunes:duration>00:51:18</itunes:duration>
+      <itunes:summary>This is where you will put the description of this episode. It is important to remember that this should only be plain, unformatted text.</itunes:summary>
+      <itunes:keywords>keywords, seperated by, commas and, spaces</itunes:keywords>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>1</itunes:episode>
+    </item>
+  </channel>
+</rss>

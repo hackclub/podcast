@@ -1,0 +1,55 @@
+---
+const { title, date, season, episode, blurb, audioUrl } = Astro.props;
+import AudioPlayer from "./AudioPlayer.astro";
+import Link from "./Link.astro";
+import Icon from "supercons";
+---
+
+<main>
+  <div style="display: flex; gap: 1rem; flex-direction: column;">
+    <p class="ep-numDate">Season {season}, Episode {episode} — {date}</p>
+    <h2 class="ep-title"><b> {title}</b></h2>
+
+    <Link bold={false} external={false} href="/listen">
+      <p
+        style="display: inline-flex; align-items: center; gap: 0.25rem; font-size: 1.25rem;"
+      >
+        <Icon glyph="announcement" size={28} />Listen elsewhere
+      </p>
+    </Link>
+  </div>
+  <p class="ep-blurb">{blurb}</p>
+  <figure>
+    <AudioPlayer audioUrl={audioUrl} title={title} />
+  </figure>
+</main>
+
+<style>
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  figure {
+    margin: 0;
+  }
+
+  .ep-title {
+    color: white;
+    font-size: 2.134rem;
+  }
+
+  .ep-numDate {
+    color: white;
+    font-size: 1.45rem;
+  }
+  .ep-blurb {
+    color: white;
+    font-size: 1.25rem;
+  }
+  p,
+  h2 {
+    margin: 0;
+    padding: 0;
+  }
+</style>

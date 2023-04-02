@@ -1,0 +1,59 @@
+<main>
+    <h1>Team</h1>
+    <div style="display: flex; flex-direction: row; gap: 5px;">
+        <img
+            src="https://avatars.githubusercontent.com/u/19589006?v=4"
+            width="48"
+        />
+        <img
+            src="https://avatars.githubusercontent.com/u/47273556?v=4"
+            width="48"
+        />
+        <img
+            src="https://forsythhacks.dev/_next/image?url=%2Fsahitipic.jpg&w=640&q=75"
+            width="48"
+        />
+        <img
+            src="https://podcast.hackclub.com/_next/image?url=%2Fteam-members%2Farav.jpg&w=256&q=75"
+            width="48"
+        />
+    </div>
+</main>
+
+<style>
+    main {
+        display: flex;
+        flex-direction: column;
+        color: white;
+        border-right: 0.5px solid white;
+        padding: 1.25rem;
+        min-width: 200px;
+        gap: 1rem;
+        padding-top: 2rem;
+    }
+
+    img {
+        border-radius: 1000000px;
+        transition: 0.25s ease;
+    }
+
+    img:hover {
+        animation: avatar 1.25s;
+    }
+
+    @keyframes avatar {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    h1 {
+        font-size: 1.5rem !important;
+        margin: 0;
+        padding: 0;
+    }
+</style>

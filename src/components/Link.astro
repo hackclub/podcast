@@ -1,0 +1,31 @@
+---
+import Icon from "supercons";
+const { href, gap = 0, external = true, bold = true } = Astro.props;
+
+const cssExternal = external ? "initial" : "none";
+const cssBold = bold ? "bold" : "normal";
+const hrefExternal = external ? "_blank" : "";
+---
+
+<a target={hrefExternal} href={href}
+    ><slot /><span class="external"><Icon glyph="external" size="32" /></span
+    ></a
+>
+
+<style define:vars={{ gap, cssExternal, cssBold }}>
+    a {
+        color: var(--red);
+        display: inline-flex;
+        transition: 0.25s ease;
+        gap: var(--gap);
+        font-weight: var(--cssBold);
+    }
+
+    a:hover {
+        filter: brightness(1.5);
+    }
+
+    .external {
+        display: var(--cssExternal);
+    }
+</style>

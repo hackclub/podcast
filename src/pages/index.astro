@@ -1,0 +1,31 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Episode from "../components/Episode.astro";
+import { getCollection } from "astro:content";
+const episodes = await getCollection("episodes");
+---
+
+<Layout>
+    <main>
+        <h1>Episodes</h1>
+        {
+            episodes.map((epi) => (
+                <Episode
+                    title={epi.data.title}
+                    blurb={epi.data.blurb}
+                    audioUrl={epi.data.audioUrl}
+                    season={epi.data.season}
+                    episode={epi.data.episode}
+                    date={epi.data.date}
+                />
+            ))
+        }
+    </main>
+
+    <style>
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+        }
+    </style>
+</Layout>
