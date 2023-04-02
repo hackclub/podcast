@@ -6,7 +6,7 @@
 
 Currently hosted by [@tregsthedev](https://github.com/tregsthedev), [@reesericci](https://github.com/reesericci), and [@sahitid](https://github.com/sahitid)
 
-With help from our amazing team: [@arashnrim](https://github.com/arashnrim), Zoya, [@VelocityDesign](https://github.com/velocitydesign/), and [@developedbytoby](https://github.com/developedbytoby)
+With help from our amazing team: [@arashnrim](https://github.com/arashnrim), [@zoya-hussain](https://github.com/zoya-hussain), [@VelocityDesign](https://github.com/velocitydesign/), and [@developedbytoby](https://github.com/developedbytoby)
 
 [Listen to the latest episode](https://podcast.hackclub.com)
 
