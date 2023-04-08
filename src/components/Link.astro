@@ -8,7 +8,7 @@ const hrefExternal = external ? "_blank" : "";
 ---
 
 <a target={hrefExternal} href={href}
-    ><slot /><span class="external"><Icon glyph="external" size="32" /></span
+    ><slot /><span class="external"><Icon client:only="react" glyph="external" size="32" /></span
     ></a
 >
 
