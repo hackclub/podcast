@@ -1,0 +1,143 @@
+@font-face {
+    font-family: "Phantom Sans";
+    src: url("https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Regular.woff")
+            format("woff"),
+        url("https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Regular.woff2")
+            format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Phantom Sans";
+    src: url("https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Italic.woff")
+            format("woff"),
+        url("https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Italic.woff2")
+            format("woff2");
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Phantom Sans";
+    src: url("https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Bold.woff")
+            format("woff"),
+        url("https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Bold.woff2")
+            format("woff2");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+:global(:root) {
+    --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
+    --font-size-lg: clamp(1.2rem, 0.7vw + 1.2rem, 1.5rem);
+    --font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+
+    --color-text: hsl(12, 5%, 4%);
+    --color-bg: hsl(10, 21%, 95%);
+    --color-border: hsl(17, 24%, 90%);
+    --red: #ec3750;
+}
+
+html {
+    font-family: "Phantom Sans", system-ui, sans-serif;
+    font-size: var(--font-size-base);
+    color: var(--color-text);
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+.header {
+    min-height: 10rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 2rem;
+    padding-left: 4rem;
+    padding-right: 25rem;
+    gap: 1rem;
+    background-color: #0b0b0b;
+    border-bottom: 0.5px solid white;
+}
+.header-content {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.content {
+    padding: 1rem;
+}
+
+:global(h1) {
+    color: white;
+    margin: 0;
+    line-height: 130%;
+}
+
+h1 {
+    font-weight: normal;
+}
+
+.header-heading {
+    font-size: 2rem;
+}
+
+a {
+    color: var(--red);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.listen {
+    width: 125px;
+    border-radius: 100000px;
+    border: none;
+    background-color: var(--red);
+    display: flex;
+    flex-direction: row;
+    gap: 0.25rem;
+    color: white;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    font-family: inherit;
+    font-size: 1.25rem;
+    transition: 0.25s ease;
+}
+
+.listen:hover {
+    transform: scale(1.2);
+}
+
+.listen:active {
+    transform: scale(0.9);
+}
+
+:global(h1) {
+    font-size: var(--font-size-xl);
+}
+
+:global(h2) {
+    font-size: var(--font-size-lg);
+}
+
+:global(code) {
+    font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
+        DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+}
+
+:global(a) {
+    text-decoration: none;
+}
