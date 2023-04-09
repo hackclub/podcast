@@ -9,11 +9,21 @@ const { title, desc } = Astro.props
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<!--- Meta Tags ----!>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={desc}>
+		<meta property="og:title" content={title}>
+		<meta property="og:url" content="https://podcast.hackclub.dev">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="https://cloud-dco3ztxu2-hack-club-bot.vercel.app/0image.png">
+		<meta name="twitter:card" content={desc}>
+		<meta name="twitter:title" content={title}>
+		<meta name="twitter:description" content={desc}>
+		<meta name="twitter:url" content="https://podcast.hackclub.dev">
+		<meta name="twitter:image" content="https://cloud-dco3ztxu2-hack-club-bot.vercel.app/0image.png">
 		<title> {title} </title>
 	</head>
 	<body>
